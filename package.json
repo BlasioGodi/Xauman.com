@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/blasiogodi/Xauman.com#readme",
   "dependencies": {
-    "bootstrap": "^5.2.3"
+    "bootstrap": "^5.2.3",
+    "font-awesome": "^4.7.0"
   }
 }

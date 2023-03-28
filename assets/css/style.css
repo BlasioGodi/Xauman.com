@@ -1,0 +1,95 @@
+@import url("/node_modules/font-awesome/css/font-awesome.css");
+@import url("https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500;600&family=Playfair+Display:ital@0;1&display=swap");
+
+:root{
+  --bs-body-font-family:font-family: 'Playfair Display', serif;
+  --bs-title-font-family: 'Alkatra', cursive;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  color:white;
+  border-bottom: none;
+  text-decoration: none;
+}
+
+a:hover{
+  transition: all 0.17s ease-in-out;
+  -moz-transition: all 0.17s ease-in-out;
+  -webkit-transition: all 0.17s ease-in-out;
+  -o-transition: all 0.17s ease-in-out;
+}
+
+.social-title{
+  font-family: var(--bs-title-font-family);
+  font-size: 1.7rem;
+}
+
+.social-list {
+  margin-bottom: 0.5vmin;
+}
+
+.social-list li {
+  margin-top: 0.5vmin;
+  display: inline-block;
+}
+
+.social-list .fa {
+  font-size: 32px;
+  color: #606060;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  transition: all 0.17s ease-in-out;
+  -moz-transition: all 0.17s ease-in-out;
+  -webkit-transition: all 0.17s ease-in-out;
+  -o-transition: all 0.17s ease-in-out;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.social-list .fa:hover {
+  background: #323232;
+}
+
+.social-list-facebook .fa:hover {
+  color: #4267b2;
+  text-decoration: none;
+}
+
+.social-list-whatsapp .fa:hover {
+  color: #25d366;
+  text-decoration: none;
+}
+
+.social-list-twitter .fa:hover {
+  color: #1da1f2;
+  text-decoration: none;
+}
+
+.social-list-instagram .fa:hover {
+  color: #fcaf45;
+  text-decoration: none;
+}
+
+.social-list-linkedin .fa:hover {
+  color: #0077b5;
+  text-decoration: none;
+}
+
+.social-list-pinterest .fa:hover {
+  color: #e60023;
+  text-decoration: none;
+}
+
+.footer-priv{
+  text-transform: uppercase;
+  font-family: var(--bs-title-font-family);
+}
