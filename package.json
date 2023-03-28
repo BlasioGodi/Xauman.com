@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/blasiogodi/Xauman.com/issues"
   },
-  "homepage": "https://github.com/blasiogodi/Xauman.com#readme"
+  "homepage": "https://github.com/blasiogodi/Xauman.com#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  }
 }
