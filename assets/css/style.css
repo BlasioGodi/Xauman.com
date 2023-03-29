@@ -45,6 +45,27 @@ a:hover{
   -o-transition: all 0.17s ease-in-out;
 }
 
+.bg-image,
+.bg-slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:100vw;
+  height: 100vh;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.bg-image > img {
+  display: none;
+}
+.bg-image + * {
+  position: relative;
+}
+.bg-fixed {
+  background-attachment: fixed;
+}
+
 .social-title{
   font-family: var(--bs-title-font-family);
   font-size: 1.7rem;

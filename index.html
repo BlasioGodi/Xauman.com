@@ -67,11 +67,34 @@
 </head>
 
 <body>
-  <header></header>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+      <div class="container">
+        <a class="navbar-brand text-muted" href="#">XAUman</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Follow">Follow us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Subscribe">Subscribe</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
   <main>
     <div class="container-fluid text-center">
       <div class="row justify-content-center align-items-center">
-        <div class="col bg-image"
+        <div class="col"
           style="background:url(src/img/Logo.webp) no-repeat center center fixed;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;-o-background-size:cover;height:100vh;">
           <div class="text-white text-center my-5">
             <h1 class="display-1 my-5">XAUman Forex</h1>
@@ -82,7 +105,7 @@
       <div class="row bg-black text-white justify-content-center align-items-center" style="height:45vh">
         <div class="row">
           <div class="col-lg-12">
-            <div class="my-3">
+            <div id="Follow" class="my-3">
               <p class="social-title">Follow us on social media for updates</p>
             </div>
             <ul class="social-list">
@@ -102,7 +125,7 @@
                   href="https://t.me/+6juAbHJs9wI4ZmI0" aria-label="telegram follow button"><i
                     class="fa fa-telegram"></i></a></li>
             </ul>
-            <div class="display-5 my-4">Subscribe</div>
+            <div id="Subscribe" class="display-5 my-4">Subscribe</div>
             <div class="text-muted">Sign up to be the first to know about our soft launch events</div>
           </div>
         </div>
@@ -126,7 +149,10 @@
       </div>
     </div>
   </footer>
+  <!--Scripts-->
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+  <script src="assets/js/core.js"></script>
 </body>
 
 </html>
