@@ -1,5 +1,6 @@
 @import url("/node_modules/font-awesome/css/font-awesome.css");
 @import url("https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500;600&family=Playfair+Display:ital@0;1&display=swap");
+@import url("/node_modules/bootstrap-icons/font/bootstrap-icons.css");
 
 :root{
   --bs-body-font-family:font-family: 'Playfair Display', serif;
@@ -39,7 +40,8 @@ a:hover{
   display: inline-block;
 }
 
-.social-list .fa {
+.bi,
+.fa{
   font-size: 32px;
   color: #606060;
   width: 50px;
@@ -53,10 +55,6 @@ a:hover{
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -o-border-radius: 50%;
-}
-
-.social-list .fa:hover {
-  background: #323232;
 }
 
 .social-list-facebook .fa:hover {
@@ -86,6 +84,16 @@ a:hover{
 
 .social-list-pinterest .fa:hover {
   color: #e60023;
+  text-decoration: none;
+}
+
+.social-list-telegram .fa:hover{
+  color: #229ED9;
+  text-decoration: none;
+}
+
+.bi:hover{
+  color: #EE1D52;
   text-decoration: none;
 }
 
