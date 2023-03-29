@@ -6,7 +6,26 @@
   --bs-body-font-family:font-family: 'Playfair Display', serif;
   --bs-title-font-family: 'Alkatra', cursive;
 }
-
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  background: #ff904c;
+}
+::selection {
+  background-color: #100c72;
+  color: #fff;
+}
+-webkit-::selection {
+  background-color: #ff904c;
+  color: #fff;
+}
+::-moz-selection {
+  background-color: #ff904c;
+  color: #fff;
+}
 ul {
   list-style-type: none;
   margin: 0;
