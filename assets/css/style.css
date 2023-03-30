@@ -80,8 +80,8 @@ a:hover{
   display: inline-block;
 }
 
-.bi,
-.fa{
+.social-list .bi,
+.social-list .fa{
   font-size: 32px;
   color: #606060;
   width: 50px;
