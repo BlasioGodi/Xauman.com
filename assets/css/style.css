@@ -49,6 +49,7 @@ input::placeholder{
   color: white;
 }
 
+/* Background Image*/
 .bg-image,
 .bg-slideshow {
   position: absolute;
@@ -70,6 +71,17 @@ input::placeholder{
   background-attachment: fixed;
 }
 
+/* Navigation Bar*/
+.navbar{
+  font-family: var(--bs-title-font-family);
+}
+
+.navbar-brand{
+
+}
+
+/* Navigation Bar*/
+
 .background-bg{
   background:url('/src/img/Logo.webp') no-repeat center center fixed;
   -moz-background-size:cover;
@@ -84,7 +96,6 @@ height:10vh;
 .background-bg#main-bg{
   height:100vh;
 }
-
 
 .social-title{
   font-family: var(--bs-title-font-family);
