@@ -70,39 +70,21 @@ input::placeholder{
   background-attachment: fixed;
 }
 
-/* Jumbotron
-.jumbotron-billboard .img {
-  margin-bottom: 0px;
-  opacity: 0.9;
-  color: #fff;
-  background: #000 url("/src/img/Logo.webp") top center no-repeat;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  overflow: hidden;
-  position:absolute;
-  top:0;
-  left:0;
-  z-index:1;
-  filter: blur(2px);
-}
-.jumbotron h2 {margin-top:0;}
-.jumbotron {
-position:relative;
-padding-top:50px;
-padding-bottom:50px;
-}
-.jumbotron .container {
-position:relative;
-z-index:2;
+.background-bg{
+  background:url('/src/img/Logo.webp') no-repeat center center fixed;
+  -moz-background-size:cover;
+  background-size:cover;
+  -o-background-size:cover;
 }
 
-@media screen and (max-width: 768px) {
-.jumbotron {
-  padding-top:20px;
-  padding-bottom:20px;
+.background-bg#nav-bg{
+height:10vh;
 }
-} */
+
+.background-bg#main-bg{
+  height:100vh;
+}
+
 
 .social-title{
   font-family: var(--bs-title-font-family);
@@ -122,9 +104,9 @@ z-index:2;
 .social-list .fa{
   color: #606060;
   font-size: 2em;
-  width: 1.2em;
+  width: 1.5em;
   height: 1.2em;
-  line-height: 2rem;
+  line-height: 1.2em;
   transition: all 0.17s ease-in-out;
   -moz-transition: all 0.17s ease-in-out;
   -webkit-transition: all 0.17s ease-in-out;
@@ -178,4 +160,7 @@ z-index:2;
 .footer-priv{
   text-transform: uppercase;
   font-family: var(--bs-title-font-family);
+}
+
+#subscribe-button{
 }
