@@ -50,6 +50,8 @@
       "addressCountry": "Kenya"
     }
   }</script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/interface.js"></script>
   <!-- Favicons -->
   <link rel="shortcut icon" sizes="64x64" href="src/logos/XAU-64x64.webp">
   <link rel="apple-touch-icon" sizes="32x32" href="src/logos/XAU-32x32.webp">
@@ -70,12 +72,14 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-black background-bg shadow" id="nav-bg">
       <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-50" style="pointer-events: none;"></div>
       <div class="container">
-        <a class="navbar-brand text-muted" href="#"><img src="src/logos/XAU-32x32.webp" alt="Xauman Logo"
+        <a class="navbar-brand text-muted"><img src="src/logos/XAU-32x32.webp" alt="Xauman Logo"
             class="d-inline-block align-text-center mx-2">XAUman</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+          aria-controls="offcanvasExample" aria-label="Toggle navigation">
+          <i class="fa fa-bars"></i>
         </button>
+
+        <!--Desktop Navigation-->
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav justify-content-center me-auto mb-2 mb-lg-0">
             <li class="nav-item">
@@ -92,8 +96,37 @@
             Coming soon!!
           </span>
         </div>
+        <!--Desktop Navigation End-->
       </div>
     </nav>
+
+    <!--Mobile Navigation-->
+    <div class="offcanvas offcanvas-start text-bg-dark" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+      id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel"><a class="navbar-brand text-muted"><img
+              src="src/logos/XAU-32x32.webp" alt="Xauman Logo" class="d-inline-block align-text-center mx-2">XAUman</a>
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-center me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Follow">Follow</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Subscribe">Subscribe</a>
+          </li>
+        </ul>
+        <span class="navbar-brand">
+          Coming soon!!
+        </span>
+      </div>
+    </div>
+
   </header>
   <main>
     <div class="container-fluid text-center">
@@ -153,8 +186,9 @@
 
   <!--Scripts-->
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
   <script src="assets/js/core.js"></script>
+
 </body>
 
 </html>
