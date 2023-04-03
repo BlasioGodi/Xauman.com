@@ -77,7 +77,7 @@ input::placeholder{
 }
 
 .navbar-brand{
-
+  font-family: var(--bs-title-font-family);
 }
 
 /* Navigation Bar*/
@@ -97,6 +97,19 @@ height:10vh;
   height:100vh;
 }
 
+/* OffCanvas*/
+
+.offcanvas{
+  font-family: var(--bs-body-font-family);
+}
+
+.offcanvas-header{
+  font-family: var(--bs-title-font-family);
+}
+
+
+/* OffCanvas*/
+
 .social-title{
   font-family: var(--bs-title-font-family);
   font-size: 1.7em;
@@ -109,6 +122,10 @@ height:10vh;
 .social-list li {
   margin-top: 0.5vmin;
   display: inline-block;
+}
+
+.social-list.vertical li{
+  display:block;
 }
 
 .social-list .bi,
