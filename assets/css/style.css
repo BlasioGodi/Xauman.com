@@ -141,41 +141,43 @@ height:10vh;
   -o-border-radius: 50%;
 }
 
+.social-list-facebook:hover,
 .social-list-facebook .fa:hover {
   color: #4267b2;
   text-decoration: none;
 }
-
+.social-list-whatsapp:hover,
 .social-list-whatsapp .fa:hover {
   color: #25d366;
   text-decoration: none;
 }
-
+.social-list-twitter:hover,
 .social-list-twitter .fa:hover {
   color: #1da1f2;
   text-decoration: none;
 }
-
+.social-list-instagram:hover,
 .social-list-instagram .fa:hover {
   color: #fcaf45;
   text-decoration: none;
 }
-
+.social-list-linkedin:hover,
 .social-list-linkedin .fa:hover {
   color: #0077b5;
   text-decoration: none;
 }
-
+.social-list-pinterest:hover,
 .social-list-pinterest .fa:hover {
   color: #e60023;
   text-decoration: none;
 }
-
+.social-list-telegram:hover,
 .social-list-telegram .fa:hover{
   color: #229ED9;
   text-decoration: none;
 }
 
+.social-list-tiktok a:hover,
 .bi:hover{
   color: #EE1D52;
   text-decoration: none;
