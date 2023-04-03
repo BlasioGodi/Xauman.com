@@ -5,6 +5,8 @@
 :root{
   --bs-body-font-family:font-family: 'Playfair Display', serif;
   --bs-title-font-family: 'Alkatra', cursive;
+  --text-color-red:red;
+  --text-color-blue:#1da1f2;
 }
 ::-webkit-scrollbar {
   width: 8px;
@@ -80,6 +82,13 @@ input::placeholder{
   font-family: var(--bs-title-font-family);
 }
 
+.text-color-red{
+  color:var(--text-color-red);
+}
+
+.text-color-blue{
+  color:var(--text-color-blue);
+}
 /* Navigation Bar*/
 
 .background-bg{
