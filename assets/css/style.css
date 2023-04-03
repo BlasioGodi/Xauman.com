@@ -99,14 +99,10 @@ height:10vh;
 
 /* OffCanvas*/
 
-.offcanvas{
-  font-family: var(--bs-body-font-family);
-}
-
+.offcanvas,
 .offcanvas-header{
   font-family: var(--bs-title-font-family);
 }
-
 
 /* OffCanvas*/
 
