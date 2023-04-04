@@ -210,14 +210,22 @@
         </div>
       </div>
       <div class="row row-cols-lg-auto align-items-start justify-content-center bg-black" style="min-height:15vh">
-        <form action="mail.php" method="post">
+        <form action="mail.php" id="contact-form" class="js-ajax-form" method="post">
           <div class="col-md-12 float-left">
             <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
               style="background-color:#000" placeholder="E-mail">
           </div>
           <div class="col-md-12 justify-content-md-start mb-2 float-right"><button type="submit"
-              class="btn btn-primary bg-dark">Sign
+              class="btn-submit btn btn-primary bg-dark">Sign
               Up</button></div>
+          <div class="col-message col-field col-sm-12">
+            <div class="form-group">
+              <div class="success-message text-white"><i class="fa fa-check text-primary"></i> Thank you!. Your message
+                is successfully sent...</div>
+              <div class="error-message bg-warning">We're sorry, but something went wrong</div>
+            </div>
+          </div>
+
         </form>
       </div>
       <div class="clearfix"></div>

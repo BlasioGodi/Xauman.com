@@ -283,3 +283,16 @@ height:10vh;
 #email{
   color: white;
 }
+
+.success-message{
+  display: none;
+}
+
+.error-message{
+  display: none;
+}
+
+.success-message .fa{
+  margin-right: 7px;
+  font-size: 1.5em;
+}

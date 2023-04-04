@@ -387,179 +387,6 @@ var Xauman = {
             });
 
         },
-        forms: function () {
-
-            /* Notification Bar */
-            var $notificationBar = $('#notification-bar'),
-                $notificationClose = $('#notification-bar').find('.close-it');
-
-            var showNotification = function (type, msg) {
-                $notificationBar.html('<div class=' + type + '>' + msg + '<a href="#" class="close-it"><i class="ti-close"></i></a></div>');
-                setTimeout(function () {
-                    $notificationBar.addClass('visible');
-                }, 400);
-                setTimeout(function () {
-                    $notificationBar.removeClass('visible');
-                }, 10000);
-            };
-
-            $body.delegate('#notification-bar .close-it', 'click', function () {
-                closeNotification();
-                return false;
-            });
-
-            var closeNotification = function () {
-                $notificationBar.removeClass('visible');
-            }
-
-            /* Validate Form */
-            $('.validate-form').each(function () {
-                $(this).validate({
-                    validClass: 'valid',
-                    errorClass: 'error',
-                    onfocusout: function (element, event) {
-                        $(element).valid();
-                    },
-                    errorPlacement: function (error, element) {
-                        return true;
-                    },
-                    rules: {
-                        email: {
-                            required: true,
-                            email: true
-                        }
-                    }
-                });
-            });
-
-
-            // Contact Form
-            var $contactForm = $('#contact-form'),
-                $contactPopup = $('#contact-popup'),
-                offsetTop = 0,
-                contactTimer = null;
-
-            $('[data-toggle="contact-popup"]').on('click', function () {
-                if ($body.hasClass('contact-popup-open')) {
-                    clearTimeout(contactTimer);
-                    $html.removeClass('locked-scrolling');
-                    $(document).scrollTop(offsetTop);
-                    $body.toggleClass('contact-popup-open');
-                    contactTimer = setTimeout(function () {
-                        $contactPopup.hide();
-                    }, 900);
-                } else {
-                    clearTimeout(contactTimer);
-                    $contactPopup.show(function () {
-                        $body.toggleClass('contact-popup-open');
-                    });
-                    offsetTop = $(window).scrollTop();
-                    contactTimer = setTimeout(function () {
-                        $html.addClass('locked-scrolling');
-                    }, 900);
-                }
-                return false;
-            });
-
-            if ($contactForm.length > 0) {
-
-                var $contactFormActiveStep = $contactForm.find('.step.active'),
-                    $contactFormNextStep = $contactFormActiveStep.next(),
-                    $contactFormPrevStep = null,
-                    $contactFormStatus = $contactForm.find('.form-status'),
-                    $contactFormSender = $contactForm.find('#sender');
-
-                $contactFormActiveStep.show();
-                $contactFormNextStep.addClass('next');
-
-                $('[data-target="form-next-step"]').on('click', function () {
-
-                    if ($contactForm.valid()) {
-                        $contactFormSender.html($('#name').val() + ' (' + $('#email').val() + ')&#x200E;');
-                        $contactFormActiveStep.removeClass('active');
-                        setTimeout(function () {
-                            $contactFormActiveStep.hide(0, function () {
-                                $contactFormPrevStep = $contactFormActiveStep;
-                                $contactFormActiveStep = $contactFormNextStep;
-                                $contactFormNextStep.show(0).addClass('active');
-                            });
-                        }, 500);
-                        $contactFormStatus.text('2/2');
-
-                    }
-
-                    return false;
-
-                });
-
-                $('[data-target="form-prev-step"]').on('click', function () {
-
-                    $contactFormActiveStep.removeClass('active');
-                    setTimeout(function () {
-                        $contactFormActiveStep.hide(0, function () {
-                            $contactFormNextStep = $contactFormActiveStep;
-                            $contactFormActiveStep = $contactFormPrevStep;
-                            $contactFormPrevStep.show(0).addClass('active');
-                        });
-                    }, 500);
-                    $contactFormStatus.text('1/2');
-
-                    return false;
-
-                });
-
-                $contactForm.submit(function () {
-                    var $btn = $(this).find('.btn-submit');
-                    var $form = $(this);
-                    var response;
-                    if ($form.valid()) {
-                        $btn.addClass('loading');
-                        //  XMLHttpRequest to get output from .php file and print on the console.
-                        //Start
-                        var xhttp = new XMLHttpRequest();
-                        var dateTiming;
-                        xhttp.onreadystatechange = function () {
-                            if (this.readyState == 4 && this.status == 200) {
-                                dateTiming = this.responseText;
-                            }
-                        };
-                        xhttp.open("GET", "mail.php", true);
-                        xhttp.send();
-                        //End
-                        $.ajax({
-                            type: 'POST',
-                            url: 'mail.php',
-                            data: $form.serialize(),
-                            error: function (err) { setTimeout(function () { $btn.addClass('error'); }, 1200); },
-                            success: function (responseText) {
-                                var funcResponse = responseText.trim();
-                                console.log(funcResponse);
-                                var match = funcResponse.match(/success/i);
-                                console.log(match);
-                                if (match !== null) {
-                                    response = 'success';
-                                } else {
-                                    response = 'error';
-                                }
-                                setTimeout(function () {
-                                    $btn.addClass(response);
-                                }, 400);
-                                console.log("Response: ", response);
-                            },
-                            complete: function (data) {
-                                setTimeout(function () {
-                                    $btn.removeClass('loading error success');
-                                }, 10000);
-                            }
-                        });
-                        return false;
-                    }
-                    return false;
-                });
-
-            }
-
-        },
         modal: function () {
 
             $('[data-toggle="video-modal"]').on('click', function () {
@@ -637,5 +464,27 @@ var Xauman = {
             $("[data-toggle='tooltip']").tooltip();
         }
     }
+};
+
+if ($('.js-ajax-form').length) {
+    $('.js-ajax-form').each(function () {
+        $(this).validate({
+            errorClass: 'error wobble-error',
+            submitHandler: function (form) {
+                $.ajax({
+                    type: "POST",
+                    url: "mail.php",
+                    data: $(form).serialize(),
+                    success: function () {
+                        $('.col-message, .success-message').show();
+                    },
+
+                    error: function () {
+                        $('.col-message, .error-message').show();
+                    }
+                });
+            }
+        });
+    });
 };
 
