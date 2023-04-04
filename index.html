@@ -69,7 +69,7 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black background-bg shadow" id="nav-bg">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black background-bg shadow h-100" id="nav-bg">
       <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-50" style="pointer-events: none;"></div>
       <div class="container">
         <a class="navbar-brand"><img src="src/logos/XAU-32x32.webp" alt="Xauman Logo"
@@ -174,14 +174,16 @@
 
   </header>
   <main>
-    <div class="loader"></div>
-    <div class="container-fluid text-center">
+    <div class="loader navbar-brand">
+      <img src="src/logos/XAU-114x114.webp" alt="">
+    </div>
+    <div class="container-fluid text-center h-100">
       <div class="row justify-content-center align-items-center">
-        <div class="col background-bg" id="main-bg">
+        <div class="row-cols-lg-auto background-bg" id="main-bg">
         </div>
       </div>
-      <div class="row bg-black text-white justify-content-center align-items-center" style="height:45vh">
-        <div class="col-lg-12">
+      <div class="row bg-black text-white justify-content-center align-items-center">
+        <div class="row-cols-lg-auto">
           <div id="Follow" class="my-3">
             <p class="h2 social-title">Follow us on social media for updates</p>
           </div>
@@ -207,14 +209,16 @@
         <div class="justify-content-center text-muted my-2">Sign up and get the latest updates on our launch.
         </div>
       </div>
-      <div class="row row-cols-lg-auto align-items-start justify-content-center bg-black" style="height:15vh">
-        <div class="col-12">
+      <div class="row row-cols-lg-auto align-items-start justify-content-center bg-black" style="min-height:15vh">
+        <div class="col-md-12 float-left">
           <input type="email" class="form-control" id="XaumanInputEmail1" aria-describedby="emailHelp"
             style="background-color:#000" placeholder="E-mail">
         </div>
-        <div class="col-12 justify-content-md-start"><button type="button" class="btn btn-primary bg-dark">Sign
+        <div class="col-md-12 justify-content-md-start mb-2 float-right"><button type="button"
+            class="btn btn-primary bg-dark">Sign
             Up</button></div>
       </div>
+      <div class="clearfix"></div>
       <div class="row justify-content-center text-white bg-black">Connect with us on our social media or reach-out
         to us
         on

@@ -7,6 +7,7 @@
   --bs-title-font-family: 'Alkatra', cursive;
   --text-color-red:red;
   --text-color-blue:#1da1f2;
+  --theme-color: gold;
 }
 ::-webkit-scrollbar {
   width: 8px;
@@ -14,18 +15,18 @@
 }
 ::-webkit-scrollbar-thumb {
   cursor: pointer;
-  background: #ff904c;
+  background: var(--theme-color);
 }
 ::selection {
   background-color: #100c72;
   color: #fff;
 }
 -webkit-::selection {
-  background-color: #ff904c;
+  background-color: var(--theme-color);
   color: #fff;
 }
 ::-moz-selection {
-  background-color: #ff904c;
+  background-color: var(--theme-color);
   color: #fff;
 }
 ul {
@@ -52,26 +53,6 @@ input::placeholder{
 }
 
 /* Background Image*/
-.bg-image,
-.bg-slideshow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width:100vw;
-  height: 100vh;
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.bg-image > img {
-  display: none;
-}
-.bg-image + * {
-  position: relative;
-}
-.bg-fixed {
-  background-attachment: fixed;
-}
 
 /* Page Loader Bar*/
 .loader{
@@ -86,30 +67,51 @@ input::placeholder{
   background-color: #f7f9fb;
   transition: opacity 0.75s, visibility 0.75s;
 }
+.loader img{
+  position: absolute;
+  margin:auto;
+  padding: 50%;
 
+}
 .loader-hidden{
   opacity:0;
   visibility: hidden;
-
 }
-
-.loader::after{
+.loader::before{
   content: "";
-  width:75px;
-  height:75px;
-  border:15px solid #dddddd;
-  border-top-color:#7449f5;
+  width:130px;
+  height:130px;
+  border:5px solid #dddddd;
+  border-top-color:gold;
   border-radius: 50%;
-  animation:loading 0.75s ease infinite;
+  animation:loading 2s linear infinite;
 }
 
 @keyframes loading {
-  from{
-    transform:rotate(0turn);
+  0%{
+    transform: rotate(0deg);
+    border-top-color:gold;
   }
-  to{
-    transform:rotate(1turn);
-  } 
+
+  25%{
+    transform: rotate(90deg);
+    border-top-color:gold;
+  }
+
+  50%{
+    transform: rotate(180deg);
+    border-top-color:red;
+  }
+
+  75%{
+    transform: rotate(270deg);
+    border-top-color:green;
+  }
+
+  100%{
+    transform: rotate(360deg);
+    border-top-color:gold;
+  }
 }
 
 /* Navigation Bar*/
@@ -129,12 +131,54 @@ input::placeholder{
   color:var(--text-color-blue);
 }
 /* Navigation Bar*/
-
 .background-bg{
-  background:url('/src/img/Logo.webp') no-repeat center center fixed;
+  background:url('/src/img/Logo-06.webp') no-repeat center center fixed;
   -moz-background-size:cover;
   background-size:cover;
   -o-background-size:cover;
+  height:100vh;
+}
+
+/* Background Image Responsive */
+@media screen and (max-width: 280px) { /* iPhone 7 screen size */
+  .background-bg#main-bg {
+    background:url('/src/img/Logo-XR.webp') no-repeat center center fixed;
+  -moz-background-size:contain;
+  background-size:contain;
+  -o-background-size:contain;
+  height: 100vh;
+  }
+}
+
+/* Background Image Responsive */
+@media screen and (max-width: 375px) { /* iPhone 7 screen size */
+  .background-bg#main-bg {
+    background:url('/src/img/Logo-SE.webp') no-repeat center center fixed;
+  -moz-background-size:contain;
+  background-size:contain;
+  -o-background-size:contain;
+  height: 100vh;
+  }
+}
+
+@media screen and (max-width: 540px) { /* iPhone XR screen size */
+  .background-bg#main-bg {
+    background:url('/src/img/Logo-03.webp') no-repeat center center fixed;
+  -moz-background-size:cover;
+  background-size:cover;
+  -o-background-size:cover;
+  height: 100vh;
+  }
+}
+
+@media screen and (max-width: 720px) { /* iPhone XR screen size */
+  .background-bg#main-bg {
+    background:url('/src/img/Logo-03.webp') no-repeat center center fixed;
+  -moz-background-size:cover;
+  background-size:cover;
+  -o-background-size:cover;
+  height: 100vh;
+  }
 }
 
 .background-bg#nav-bg{
