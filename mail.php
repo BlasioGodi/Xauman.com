@@ -19,6 +19,7 @@ if (isset($email)) {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $responses[] = 'Email is not valid!';
     }
+
     // Make sure the form fields are not empty
     if (empty($email)) {
         $responses[] = 'Please complete all fields!';

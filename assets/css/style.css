@@ -52,6 +52,10 @@ input::placeholder{
   color: white;
 }
 
+label{
+  color: white;
+}
+
 /* Background Image*/
 
 /* Page Loader Bar*/
@@ -280,6 +284,8 @@ height:10vh;
   font-family: var(--bs-title-font-family);
 }
 
+/* Email Input*/
+
 #email{
   color: white;
 }
@@ -296,3 +302,53 @@ height:10vh;
   margin-right: 7px;
   font-size: 1.5em;
 }
+
+.col-message{
+  display: none;
+  margin-top: 20px;
+}
+
+/* Form Control*/
+
+.form-control,
+textarea.form-control{
+  font-size: 1em;
+  height: 3.1em;
+  border-radius: 0.75em;
+  padding-left: 22px;
+  background-color: #323232;
+  border:1px solid #323232;
+  -webkit-box-shadow:none;
+          box-shadow:none;
+      -webkit-appearance: none;
+  -webkit-transition: all .15s;
+       -o-transition: all .15s;
+          transition: all .15s;
+}
+.form-control:focus{
+  border-color:#ff904c;
+  outline: 0;
+  -webkit-box-shadow:none;
+          box-shadow:none;
+}
+
+.form-control::-moz-placeholder {
+  opacity: 1;
+}
+
+.form-control:-ms-input-placeholder {
+  color: #919191;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: #919191;
+}
+
+.form-control.error{
+  border-color:red;
+}
+
+.form-group{
+  margin-bottom: 10px;
+}
+
