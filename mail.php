@@ -33,12 +33,12 @@ if (isset($email)) {
         $phpmailer->Host = 'smtp.gmail.com';
         $phpmailer->SMTPAuth = true;
         $phpmailer->Port = 587;
-        $phpmailer->Username = 'hesolhes254@gmail.com';
-        $phpmailer->Password = 'tfsnnhekmpwqvioo';
-        $phpmailer->setFrom($email, 'Hessal Website');
-        $phpmailer->addReplyTo($email, 'Hessal Website');
-        $phpmailer->addAddress('hesolhes254@gmail.com', 'Hessal GMAIL');
-        $phpmailer->addBCC('info@hessal-sol.com', 'Hessal Titan');
+        $phpmailer->Username = 'fxgold254kenya@gmail.com';
+        $phpmailer->Password = 'wsrskuttwphougco';
+        $phpmailer->setFrom($email, 'Xauman Forex Website');
+        $phpmailer->addReplyTo($email, 'Xauman Forex Website');
+        $phpmailer->addAddress('fxgold254kenya@gmail.com', 'Xauman GMAIL');
+        $phpmailer->addBCC('info@xauman.com', 'Xauman Titan');
         $phpmailer->Subject = "Website Message";
         $exception = new Exception();
 
