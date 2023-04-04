@@ -279,3 +279,7 @@ height:10vh;
   text-transform: uppercase;
   font-family: var(--bs-title-font-family);
 }
+
+#email{
+  color: white;
+}

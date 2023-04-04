@@ -3,7 +3,7 @@
 
 <head>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1L41JYFVYB"></script>
+  <script src="https://www.googletagmanager.com/gtag/js?id=G-1L41JYFVYB" defer></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
@@ -53,10 +53,10 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="assets/js/interface.js"></script>
   <!-- Favicons -->
-  <link rel="shortcut icon" sizes="64x64" href="src/logos/XAU-64x64.webp">
-  <link rel="apple-touch-icon" sizes="32x32" href="src/logos/XAU-32x32.webp">
-  <link rel="apple-touch-icon" sizes="72x72" href="src/logos/XAU-72x72.webp">
-  <link rel="apple-touch-icon" sizes="114x114" href="src/logos/XAU-114x114.webp">
+  <link rel="shortcut icon" sizes="64x64" width="64px" height="64px" href="src/logos/XAU-64x64.webp">
+  <link rel="apple-touch-icon" sizes="32x32" width="32px" height="32px" href="src/logos/XAU-32x32.webp">
+  <link rel="apple-touch-icon" sizes="72x72" width="72px" height="72px" href="src/logos/XAU-72x72.webp">
+  <link rel="apple-touch-icon" sizes="114x114" width="114px" height="114px" href="src/logos/XAU-114x114.webp">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="assets/css/style.css">
 
@@ -72,7 +72,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-black background-bg shadow h-100" id="nav-bg">
       <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-50" style="pointer-events: none;"></div>
       <div class="container">
-        <a class="navbar-brand"><img src="src/logos/XAU-32x32.webp" alt="Xauman Logo"
+        <a class="navbar-brand" href="index.html"><img src="src/logos/XAU-32x32.webp" alt="Xauman Logo"
             class="d-inline-block align-text-center mx-2"><strong class="text-color-red">XAU</strong><strong
             class="text-color-blue">man</strong></a>
         <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasXauman"
@@ -94,7 +94,7 @@
           </ul>
           <span class="navbar-brand position-relative "><button class="btn btn-secondary bg-dark text-muted"
               type="button" data-bs-toggle="collapse" data-bs-target="#collapseXauman" aria-expanded="false"
-              aria-controls="collapseXauman">
+              aria-controls="collapseXauman">s
               Share on Social Media
             </button>
             <div class="collapse bg-black position-absolute top-20" id="collapseXauman">
@@ -129,7 +129,7 @@
     <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasXauman"
       aria-labelledby="offcanvasXaumanLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasXaumanLabel"><a class="navbar-brand"><img
+        <h5 class="offcanvas-title" id="offcanvasXaumanLabel"><a class="navbar-brand" href="index.html"><img
               src="src/logos/XAU-32x32.webp" alt="Xauman Logo" class="d-inline-block align-text-center mx-2"><strong
               class="text-color-red">XAU</strong><strong class="text-color-blue">man</strong></a>
         </h5>
@@ -138,7 +138,7 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-center me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
           </li>
           <li class="nav-item">
             <button class="btn btn-secondary bg-dark" type="button" data-bs-toggle="collapse"
@@ -210,13 +210,15 @@
         </div>
       </div>
       <div class="row row-cols-lg-auto align-items-start justify-content-center bg-black" style="min-height:15vh">
-        <div class="col-md-12 float-left">
-          <input type="email" class="form-control" id="XaumanInputEmail1" aria-describedby="emailHelp"
-            style="background-color:#000" placeholder="E-mail">
-        </div>
-        <div class="col-md-12 justify-content-md-start mb-2 float-right"><button type="button"
-            class="btn btn-primary bg-dark">Sign
-            Up</button></div>
+        <form action="mail.php" method="post">
+          <div class="col-md-12 float-left">
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
+              style="background-color:#000" placeholder="E-mail">
+          </div>
+          <div class="col-md-12 justify-content-md-start mb-2 float-right"><button type="submit"
+              class="btn btn-primary bg-dark">Sign
+              Up</button></div>
+        </form>
       </div>
       <div class="clearfix"></div>
       <div class="row justify-content-center text-white bg-black">Connect with us on our social media or reach-out
@@ -242,8 +244,6 @@
   <!--Scripts-->
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
   <script src="assets/js/interface.js"></script>
-  <script src="assets/js/core.js"></script>
-
 </body>
 
 </html>
