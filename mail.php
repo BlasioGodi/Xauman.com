@@ -29,17 +29,19 @@ if (isset($email)) {
 
         //SMTP Configuration settings
         $phpmailer = new PHPMailer(true);
+        $phpmailer->SMTPSecure = 'ssl';
         $phpmailer->isSMTP();
-        $phpmailer->Host = 'smtp.hostinger.com';
+        $phpmailer->Host = 'smtp.titan.email';
         $phpmailer->SMTPAuth = true;
-        $phpmailer->Port = 587;
+        $phpmailer->Port = 465;
         $phpmailer->Username = 'info@xauman.com';
         $phpmailer->Password = 'traderjosh@2023';
-        $phpmailer->setFrom($email, 'Xauman Forex Website');
-        $phpmailer->addReplyTo($email, 'Xauman Forex Website');
+        $phpmailer->setFrom('info@xauman.com', 'Xauman Forex Website');
+        $phpmailer->addReplyTo($email, 'Sender Details');
         $phpmailer->addAddress('info@xauman.com', 'Xauman GMAIL');
         $phpmailer->addBCC('muhindablasio@gmail.com', 'Xauman Titan');
         $phpmailer->Subject = "Website Message";
+        $phpmailer->Sender = 'info@xauman.com';
         $exception = new Exception();
 
         //SMTP Debug setting
