@@ -30,15 +30,15 @@ if (isset($email)) {
         //SMTP Configuration settings
         $phpmailer = new PHPMailer(true);
         $phpmailer->isSMTP();
-        $phpmailer->Host = 'smtp.gmail.com';
+        $phpmailer->Host = 'smtp.hostinger.com';
         $phpmailer->SMTPAuth = true;
         $phpmailer->Port = 587;
         $phpmailer->Username = 'info@xauman.com';
-        $phpmailer->Password = '';
+        $phpmailer->Password = 'traderjosh@2023';
         $phpmailer->setFrom($email, 'Xauman Forex Website');
         $phpmailer->addReplyTo($email, 'Xauman Forex Website');
         $phpmailer->addAddress('info@xauman.com', 'Xauman GMAIL');
-        $phpmailer->addBCC('info@xauman.com', 'Xauman Titan');
+        $phpmailer->addBCC('muhindablasio@gmail.com', 'Xauman Titan');
         $phpmailer->Subject = "Website Message";
         $exception = new Exception();
 
