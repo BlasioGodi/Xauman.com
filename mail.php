@@ -1,4 +1,5 @@
 <?php
+include 'config.php';
 
 //Phpmailer
 use PHPMailer\PHPMailer\PHPMailer;
@@ -12,6 +13,8 @@ $responses = [];
 $email = $_POST["email"];
 
 $emailSent = ''; //Email sent declaration
+
+$htmlcontent = file_get_contents('/email/xauman_email_2.html');
 
 // Check if the form was submitted
 if (isset($email)) {
@@ -66,4 +69,5 @@ if (isset($email)) {
         }
     }
 }
+
 ?>
