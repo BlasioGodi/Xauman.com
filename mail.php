@@ -71,6 +71,39 @@ if (isset($email)) {
         } catch (Exception $exception) {
             $errorMessage = 'Oops, something went wrong. Mailer Error: ' . $exception->errorMessage();
         }
+
+        try {
+            //Server Settings
+            $phpmailer = new PHPMailer(true);
+            $phpmailer->SMTPSecure = 'ssl';
+            $phpmailer->isSMTP();
+            $phpmailer->Host = 'smtp.titan.email';
+            $phpmailer->SMTPAuth = true;
+            $phpmailer->Port = 465;
+            $phpmailer->Username = 'info@xauman.com';
+            $phpmailer->Password = 'traderjosh@2023';
+            $phpmailer->setFrom('info@xauman.com', 'Xauman Forex');
+            $phpmailer->addReplyTo('info@xauman.com', 'Sender Details');
+            $phpmailer->addAddress('info@xauman.com', 'Administrator');
+            $phpmailer->addBCC('muhindablasio@gmail.com', 'Administrator');
+
+            //SMTP Debug Setting
+            $phpmailer->SMTPDebug = 0;
+
+            //Email Sender & Subject
+            $phpmailer->Sender = 'info@xauman.com';
+            $phpmailer->Subject = "Welcome to Xauman Forex!";
+            $body = file_get_contents('email/admin_notification.html');
+
+            // Enable HTML if needed
+            $phpmailer->isHTML(true);
+            $phpmailer->Body = $body;
+
+            $phpmailer->send();
+
+        } catch (Exception $exception) {
+            $errorMessage = 'Oops, something went wrong. Mailer Error: ' . $exception->errorMessage();
+        }
     }
 }
 ?>
