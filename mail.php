@@ -1,5 +1,5 @@
 <?php
-include_once 'config.php';
+require_once 'connect.php';
 
 //Phpmailer
 use PHPMailer\PHPMailer\PHPMailer;
@@ -9,7 +9,9 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 // Output messages
 $responses = [];
-$email = $_POST["email"];
+
+//Data Sanitization and protection from SQL Injection Attack
+$email = isset($_POST["email"]) ? htmlspecialchars($_POST["email"]) : '';
 
 // Check if the form was submitted
 if (isset($email)) {
@@ -23,20 +25,20 @@ if (isset($email)) {
     }
     // If there are no errors
     if (!$responses) {
+        // Prepare the SQL query with placeholders
+        $stmt = $pdo->prepare("INSERT INTO subscribers_details (email_address) VALUES (:email)");
 
-        if (isset($_POST['sub_button'])) {
+        // Bind the form data to the placeholders
+        $stmt->bindParam(':email', $email);
 
-            $sql = "INSERT INTO subscribers_details (email_address)
-                VALUES ('$email')";
-
-            if ($conn->query($sql) === TRUE) {
-                echo "New record created successfully";
-            } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
-            }
-
-            $conn->close();
+        // Execute the query
+        try {
+            $stmt->execute();
+            echo "Record inserted successfully.";
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
         }
+
         try {
             //Server Settings
             $phpmailer = new PHPMailer(true);
@@ -50,7 +52,6 @@ if (isset($email)) {
             $phpmailer->setFrom('info@xauman.com', 'Xauman Forex');
             $phpmailer->addReplyTo($email, 'Sender Details');
             $phpmailer->addAddress($email, 'Commodities Trader');
-            $phpmailer->addBCC('muhindablasio@gmail.com', 'Administrator');
 
             //SMTP Debug Setting
             $phpmailer->SMTPDebug = 0;
@@ -92,7 +93,7 @@ if (isset($email)) {
 
             //Email Sender & Subject
             $phpmailer->Sender = 'info@xauman.com';
-            $phpmailer->Subject = "Welcome to Xauman Forex!";
+            $phpmailer->Subject = "New User Registered with Us";
             $body = file_get_contents('email/admin_notification.html');
 
             // Enable HTML if needed
