@@ -70,6 +70,7 @@ label {
   align-items: center;
   background-color: #f7f9fb;
   transition: opacity 0.75s, visibility 0.75s;
+  z-index: 1;
 }
 .loader img {
   position: absolute;
@@ -295,10 +296,18 @@ label {
 
 .success-message {
   display: none;
+  transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
 }
 
 .error-message {
   display: none;
+  transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
 }
 
 .success-message .fa {
@@ -453,6 +462,7 @@ textarea.form-control {
 
 #sub_button {
   opacity: 0.2;
+  z-index: 2;
 }
 
 #sub_button:hover {
