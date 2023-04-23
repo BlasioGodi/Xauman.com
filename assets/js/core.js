@@ -585,12 +585,12 @@ var Xauman = {
                                 dateTiming = this.responseText;
                             }
                         };
-                        xhttp.open("GET", "mailto.php", true);
+                        xhttp.open("GET", "mail.php", true);
                         xhttp.send();
                         //End
                         $.ajax({
                             type: 'POST',
-                            url: 'mailto.php',
+                            url: 'mail.php',
                             data: $form.serialize(),
                             error: function (err) { setTimeout(function () { $btn.addClass('error'); }, 1200); },
                             success: function (responseText) {
