@@ -466,8 +466,7 @@ textarea.form-control {
 }
 
 #sub_button:hover {
-  background: orange;
-  color: #222;
+  color: var(--text-color-blue);
 }
 
 .submit_enabled {
